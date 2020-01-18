@@ -31,3 +31,9 @@ let formTextArea = document.getElementById('instructions');
 formTextArea.addEventListener('focus', (event) => {
     event.target.classList.toggle('text-area');
 });
+
+// add cursor pointer to the submit button
+let submitBtn = document.getElementById('button');
+submitBtn.style.cursor = 'pointer';
+
+//
