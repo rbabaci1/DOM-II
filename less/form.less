@@ -1,0 +1,86 @@
+form h1 {
+    text-align: center;
+    color: rgb(83, 22, 22);
+    font-size: 5rem;
+    padding: 20px 0;
+    background-color: darken(#82aae1, 10%);
+    text-shadow: 2px 2px pink;
+    margin-top: 50px;
+}
+.contact {
+    background-color: darken(#82aae1, 3%);
+
+    .wrapper {
+        max-width: 800px;
+        margin: 0 auto;
+
+        .package {
+            text-align: center;
+            line-height: 40px;
+            padding: 20px 0;
+
+            h2 {
+                font-size: 3.5rem;
+            }
+            
+            #select-package {
+                font-size: 2rem;
+                background-color: #0e9eb1;
+                color: rgb(252, 249, 244);
+                width: 210px;
+                margin: 15px 0;
+            }
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            
+            div {
+                width: 33%;
+            }
+            input {
+                width: 100%;
+                padding: 1rem;
+                text-align: center;
+                border: 1px solid #598ed7;
+                border-radius: 5px;
+                font-size: 20px;
+            }
+            @media (max-width: 500px) {
+                flex-direction: column;
+                align-items: center;
+                div {
+                    width: 60%;
+                }
+                input {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
+        .bottom {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 40px 0;
+
+            #instructions {
+                width: 100%;
+                font-size: 1.8rem;
+                border-radius: 5px;
+                margin-bottom: 2rem;;
+            }
+            #button {
+                padding: 10px 50px;
+                font-size: 1.5rem;
+                border-radius: 5px;
+                color: white;
+                background: #598ed7;
+
+            }
+           
+        }
+    }
+}

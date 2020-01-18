@@ -83,6 +83,39 @@
     </section>
   </div><!-- container -->
 
+  <form name="contact" method="POST" netlify>
+    <h1>Contact</h1>
+    <div class="contact">
+
+      <div class="wrapper">
+        <div class="package">
+            <h2>Choose a package!</h2>
+            <select name="packages" id="select-package">
+              <option value="FunInTheSun">Fun In The Sun</option>
+              <option value="MountainExcursion">Mountain Excursion</option>
+              <option value="IslandGetaway">Island Getaway</option>
+            </select>
+        </div>
+
+        <section class="top">
+          <div><input type="text" name="name" placeholder="Name" /></div>
+          <div><input type="text" name="email" placeholder="Email" /></div>
+          <div><input type="text" name="phone-number" placeholder="Phone Number" /></div>
+        </section>
+
+        <section class="bottom">
+          <div>
+            <textarea id="instructions" name="Instructions" cols="40" rows="10" placeholder="Special Instructions"></textarea>
+          </div>
+          <div>
+              <input id="button" type="submit" value="Submit" target="_blank" />
+          </div>
+        </section>
+      </div>
+
+    </div>
+</form>
+
   <footer class="footer">
     <p>Copyright Fun Bus 2018</p>
   </footer>
