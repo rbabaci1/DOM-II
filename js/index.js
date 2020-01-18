@@ -1,18 +1,12 @@
-// add animation on mouseover event
-let navLinks = document.getElementsByClassName('nav-link');
+// add effect to the header when a user scrolls down
 let header = document.body.firstElementChild;
 
-header.addEventListener('mouseover', (e) => {
-    if (header !== event.target) {
-        return;
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        header.style = 'box-shadow: inset 0.2rem 0.2rem 0.8rem 0.1rem #634a1c';
+    } else {
+        header.style = "";
     }
-    e.target.classList.toggle('animation');
-    e.target.style.color = 'orange';
-});
-header.addEventListener('mouseleave', (e) => {
-    if (e.target !== header) {
-        return;
-    }
-    e.target.classList.toggle('animation');
-});
+})
 
+// add wheel event
