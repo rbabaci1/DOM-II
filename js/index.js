@@ -50,3 +50,15 @@ dragItems[0].addEventListener('dragstart', (event) => {
 dragItems[2].addEventListener('dragover', (event) => {
     event.preventDefault();
 });
+
+// dblclick event handler
+let logo = document.querySelector('.logo-heading');
+
+logo.addEventListener('dblclick', (event) => {
+    event.target.classList.toggle('logo-dblclick');
+});
+
+// prevent selection on double click
+logo.addEventListener('mousedown', (event) => {
+    event.preventDefault();
+});
