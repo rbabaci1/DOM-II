@@ -96,3 +96,9 @@ introP.addEventListener('mouseover', (event) => {
 introP.addEventListener('mouseleave', (event) => {
     event.target.style = '';
 });
+
+// stop nav links from refreshing the page
+let nav = document.querySelector('.nav');
+nav.addEventListener('click', (event) => {
+    event.preventDefault();
+});
