@@ -10,3 +10,15 @@ window.addEventListener('scroll', () => {
 })
 
 // add wheel event
+let allImages = document.querySelectorAll('.home img');
+let scale = 1;
+
+allImages.forEach(img => {
+    img.addEventListener('wheel', (event) => {
+        event.preventDefault();
+        scale += event.deltaY * -0.01;
+        scale = Math.min(Math.max(.125, scale), 4);
+
+        event.target.style.transform = `scale(${scale})`;
+    });
+});
