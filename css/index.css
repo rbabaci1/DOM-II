@@ -268,7 +268,6 @@ form h1 {
 .contact .wrapper .top input {
   width: 100%;
   padding: 1rem;
-  text-align: center;
   border: 1px solid #598ed7;
   border-radius: 5px;
   font-size: 20px;
@@ -293,13 +292,14 @@ form h1 {
 }
 .contact .wrapper .bottom #instructions {
   width: 100%;
-  font-size: 1.8rem;
+  font-size: 2rem;
   border-radius: 5px;
   margin-bottom: 2rem;
+  padding: 10px;
 }
 .contact .wrapper .bottom #button {
   padding: 10px 50px;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   border-radius: 5px;
   color: white;
   background: #598ed7;

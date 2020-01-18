@@ -25,15 +25,28 @@ allImages.forEach(img => {
     });
 });
 
-// add a focus event to the contact form
-let formTextArea = document.getElementById('instructions');
-
-formTextArea.addEventListener('focus', (event) => {
-    event.target.classList.toggle('text-area');
-});
-
 // add cursor pointer to the submit button
 let submitBtn = document.getElementById('button');
 submitBtn.style.cursor = 'pointer';
 
-//
+// add a keydown event to the contact form
+let contactWrapper = document.querySelector('.wrapper');
+contactWrapper.addEventListener('keydown', (event) => {
+    event.target.style.background = 'yellow';
+});
+
+// add keyUp event to the contact form
+contactWrapper.addEventListener('keyup', () => {
+    event.target.style.background = '#ffc600';
+});
+
+// add drag and dropt event handlers
+let dragItems = document.querySelectorAll('.top input');
+
+dragItems[0].addEventListener('dragstart', (event) => {
+    event.dataTransfer.setData('Text', event.target.value);
+});
+
+dragItems[2].addEventListener('dragover', (event) => {
+    event.preventDefault();
+});
