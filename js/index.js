@@ -23,7 +23,11 @@ allImages.forEach(img => {
 
         event.target.style.transform = `scale(${scale})`;
     });
+    img.addEventListener('click', () => {
+        img.style.transform = 'scale(1)';
+    });
 });
+
 
 // add cursor pointer to the submit button
 let submitBtn = document.getElementById('button');
@@ -53,12 +57,42 @@ dragItems[2].addEventListener('dragover', (event) => {
 
 // dblclick event handler
 let logo = document.querySelector('.logo-heading');
+let click = 0;
 
 logo.addEventListener('dblclick', (event) => {
+    click++;
+    if (click % 2 != 0) {
+        event.target.textContent = 'Sub Nuf';
+    } else {
+        event.target.textContent = "Fun Bus";
+    }
     event.target.classList.toggle('logo-dblclick');
 });
 
 // prevent selection on double click
 logo.addEventListener('mousedown', (event) => {
     event.preventDefault();
+});
+
+// add event handlers to the paragraphs
+
+let intro = document.querySelector('.intro');
+
+intro.addEventListener('mouseover', () => {
+    intro.style = 'background: lightBlue; padding-left: 5px';
+});
+
+intro.addEventListener('mouseleave', (event) => {
+    event.target.style = '';
+});
+
+let introP = document.querySelector('.intro p');
+
+introP.addEventListener('mouseover', (event) => {
+    event.target.style = 'background: orange; padding-left: 5px';
+    event.stopPropagation();
+});
+
+introP.addEventListener('mouseleave', (event) => {
+    event.target.style = '';
 });
