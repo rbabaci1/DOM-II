@@ -25,3 +25,9 @@ allImages.forEach(img => {
     });
 });
 
+// add a focus event to the contact form
+let formTextArea = document.getElementById('instructions');
+
+formTextArea.addEventListener('focus', (event) => {
+    event.target.classList.toggle('text-area');
+});
