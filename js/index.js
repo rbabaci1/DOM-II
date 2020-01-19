@@ -102,3 +102,68 @@ let nav = document.querySelector('.nav');
 nav.addEventListener('click', (event) => {
     event.preventDefault();
 });
+
+// GSAP animation
+let textContent = document.querySelectorAll('.text-content')[0];
+let imgContent = document.querySelector('.img-content img');
+
+// add id to the first text content and img content
+textContent.setAttribute('id', 'lets-go');
+
+// Create swap button
+let button = document.createElement('button');
+button.id = 'btn-swap';
+button.textContent = 'Swap Contents';
+// add style to the button
+button.style = 'font-size: 2rem; padding: 5px 10px; border-radius: 7px; background: #f3a502; cursor: pointer; position: relative; left: 300px';
+button.classList.add('swap');
+
+let insertNode = document.querySelector('.home');
+insertNode.insertBefore(button, textContent.parentElement);
+let swapClick = 1; 
+
+// add ids for text and img content
+const allContent = document.querySelectorAll('.text-content, .img-content');
+for (let i = 0; i < allContent.length; i++) {
+    allContent[i].id = `col-${i + 1}`;
+}
+
+// swap on click
+button.addEventListener('click', () => {
+    swapClick++;
+    if (swapClick % 2 == 0) {
+        gsap.to('#col-1', {
+            duration: 1,
+            x: 430,
+        });
+        gsap.to('#col-2', {
+            duration: 1,
+            x: -430
+        });
+        gsap.to('#col-3', {
+            duration: 1,
+            x: 430
+        });
+        gsap.to('#col-4', {
+            duration: 1,
+            x: -430
+        });
+    } else {
+        gsap.to('#col-1', {
+            duration: 1,
+            x: 0
+        });
+        gsap.to('#col-2', {
+            duration: 1,
+            x: 0
+        });
+        gsap.to('#col-3', {
+            duration: 1,
+            x: 0
+        });
+        gsap.to('#col-4', {
+            duration: 1,
+            x: 0
+        });
+    }
+});
