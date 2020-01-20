@@ -9,7 +9,7 @@ window.addEventListener('scroll', () => {
         header.style = "";
         document.body.style = "";
     }
-})
+});
 
 // add wheel event
 let allImages = document.querySelectorAll('.home img');
@@ -23,6 +23,7 @@ allImages.forEach(img => {
 
         event.target.style.transform = `scale(${scale})`;
     });
+
     img.addEventListener('click', () => {
         img.style.transform = 'scale(1)';
     });
@@ -74,10 +75,8 @@ logo.addEventListener('mousedown', (event) => {
     event.preventDefault();
 });
 
-// add event handlers to the paragraphs
-
 let intro = document.querySelector('.intro');
-
+// add event handlers to the paragraphs
 intro.addEventListener('mouseover', () => {
     intro.style = 'background: lightBlue; padding-left: 5px';
 });
@@ -103,24 +102,19 @@ nav.addEventListener('click', (event) => {
     event.preventDefault();
 });
 
-// GSAP animation
-let textContent = document.querySelectorAll('.text-content')[0];
-let imgContent = document.querySelector('.img-content img');
-
-// add id to the first text content and img content
-textContent.setAttribute('id', 'lets-go');
-
 // Create swap button
 let button = document.createElement('button');
 button.id = 'btn-swap';
 button.textContent = 'Swap Contents';
 // add style to the button
-button.style = 'font-size: 2rem; padding: 5px 10px; border-radius: 7px; background: #f3a502; cursor: pointer; position: relative; left: 300px';
+button.style = 'font-size: 1.9rem; padding: 5px 10px; border-radius: 7px; background: inherit; cursor: pointer; position: relative; left: 300px';
 button.classList.add('swap');
 
-let insertNode = document.querySelector('.home');
-insertNode.insertBefore(button, textContent.parentElement);
-let swapClick = 1; 
+// the element to insert before at
+let insertBefore = document.querySelector('.content-section');
+// the parent location
+let insertLocation = document.querySelector('.home');
+insertLocation.insertBefore(button, insertBefore);
 
 // add ids for text and img content
 const allContent = document.querySelectorAll('.text-content, .img-content');
@@ -128,26 +122,32 @@ for (let i = 0; i < allContent.length; i++) {
     allContent[i].id = `col-${i + 1}`;
 }
 
-// swap on click
+let clickCount = 1;
+
 button.addEventListener('click', () => {
-    swapClick++;
-    if (swapClick % 2 == 0) {
+    clickCount++;
+    if (clickCount % 2 == 0) {
         gsap.to('#col-1', {
             duration: 1,
             x: 430,
+            ease:  "expo.in"
         });
         gsap.to('#col-2', {
             duration: 1,
-            x: -430
+            x: -430,
+            ease:  "expo.in"
         });
         gsap.to('#col-3', {
             duration: 1,
-            x: 430
+            x: 430,
+            ease:  "expo.in"
         });
         gsap.to('#col-4', {
             duration: 1,
-            x: -430
+            x: -430,
+            ease:  "expo.in"
         });
+
     } else {
         gsap.to('#col-1', {
             duration: 1,
